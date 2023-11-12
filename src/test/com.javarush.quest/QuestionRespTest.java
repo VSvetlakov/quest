@@ -1,11 +1,9 @@
-import com.javarush.quest.Answer;
 import org.junit.jupiter.api.Test;
 import response.AnswerResp;
 import response.QuestionResp;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +13,7 @@ public class QuestionRespTest {
         QuestionResp questionResp = new QuestionResp();
         questionResp.setMessage("Test message");
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = questionResp.getClass().getDeclaredField("message");
         } catch (NoSuchFieldException e) {
@@ -34,7 +32,7 @@ public class QuestionRespTest {
         QuestionResp questionResp = new QuestionResp();
         questionResp.setResult("win");
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = questionResp.getClass().getDeclaredField("result");
         } catch (NoSuchFieldException e) {
@@ -60,7 +58,7 @@ public class QuestionRespTest {
         QuestionResp questionResp = new QuestionResp();
         questionResp.setAnswerList(answerList);
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = questionResp.getClass().getDeclaredField("answerList");
         } catch (NoSuchFieldException e) {

@@ -1,9 +1,6 @@
 package controllers;
 
 
-import com.google.gson.Gson;
-import com.javarush.quest.Answer;
-import com.javarush.quest.Quest;
 import com.javarush.quest.Question;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,19 +10,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import response.AnswerResp;
-import response.QuestionResp;
+
 import response.ResponseController;
 
 import java.io.*;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 
 @WebServlet(name = "QuestServlet", value = "/questService")
 public class QuestServlet extends HttpServlet {
@@ -43,7 +31,7 @@ public class QuestServlet extends HttpServlet {
         String questId     = req.getParameter("questId");
         String answerId    = req.getParameter("answerId");
 
-        if (questId != null && questId != sessionQuestId)
+        if (questId != null && !questId.equals(sessionQuestId))
             answerId = null;
 
         if (questId != null)

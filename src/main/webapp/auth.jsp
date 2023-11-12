@@ -30,7 +30,6 @@
                 <label class="col-md-4 control-label" for="username">username</label>
                 <div class="col-md-4">
                     <input id="Username" name="username" type="text" placeholder="" class="form-control input-md">
-
                 </div>
             </div>
 

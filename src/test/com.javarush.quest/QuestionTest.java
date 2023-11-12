@@ -1,5 +1,4 @@
 import com.javarush.quest.Answer;
-import com.javarush.quest.Quest;
 import com.javarush.quest.Question;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -16,7 +15,7 @@ public class QuestionTest {
     public void getMessage(){
         Question question = new Question();
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = question.getClass().getDeclaredField("message");
         } catch (NoSuchFieldException e) {
@@ -36,7 +35,7 @@ public class QuestionTest {
     public void getId(){
         Question question = new Question();
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = question.getClass().getDeclaredField("id");
         } catch (NoSuchFieldException e) {
@@ -56,7 +55,7 @@ public class QuestionTest {
     public void getResult(){
         Question question = new Question();
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = question.getClass().getDeclaredField("result");
         } catch (NoSuchFieldException e) {
@@ -83,7 +82,7 @@ public class QuestionTest {
 
         Question question = new Question();
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = question.getClass().getDeclaredField("answerList");
         } catch (NoSuchFieldException e) {

@@ -3,8 +3,6 @@ package controllers;
 import com.javarush.quest.Answer;
 import com.javarush.quest.Quest;
 import com.javarush.quest.Question;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,8 +21,6 @@ public class QuestController {
 
     private String questId;
 
-    private String answerId;
-
     public QuestController(String questId) {
         this.questId = questId;
     }
@@ -38,12 +34,10 @@ public class QuestController {
 
         ArrayList<Question> questions = quest.getQuestionList();
 
-        if (questions.size() == 0)
+        if (questions.isEmpty())
             return null;
 
-        Question question = null;
-
-        int nextQuestionId = 0;
+        int nextQuestionId;
         if (answerId == null){
             log.info("Пользователь {} начал квест {}", user, questId);
             return questions.get(0);
@@ -78,7 +72,7 @@ public class QuestController {
 
         String fileName = "/quests/" + questId + ".xml";
 
-        String content = "";
+        String content;
 
         try {
             content = readTextResource(fileName);

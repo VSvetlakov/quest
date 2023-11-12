@@ -1,7 +1,5 @@
-import com.javarush.quest.Answer;
 import com.javarush.quest.Quest;
 import com.javarush.quest.Question;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
@@ -23,7 +21,7 @@ public class QuestTest {
 
         Quest quest = new Quest();
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = quest.getClass().getDeclaredField("questionList");
         } catch (NoSuchFieldException e) {

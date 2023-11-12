@@ -11,7 +11,7 @@ public class AnswerTest {
     public void getMessage()  {
         Answer answer = new Answer();
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = answer.getClass().getDeclaredField("message");
         } catch (NoSuchFieldException e) {
@@ -31,7 +31,7 @@ public class AnswerTest {
     public void getId()  {
         Answer answer = new Answer();
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = answer.getClass().getDeclaredField("id");
         } catch (NoSuchFieldException e) {
@@ -51,7 +51,7 @@ public class AnswerTest {
     public void getStepTo()  {
         Answer answer = new Answer();
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = answer.getClass().getDeclaredField("stepTo");
         } catch (NoSuchFieldException e) {

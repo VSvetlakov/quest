@@ -12,7 +12,7 @@ public class AnswerRespTest {
         AnswerResp answerResp = new AnswerResp();
         answerResp.setMessage("Test message");
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = answerResp.getClass().getDeclaredField("message");
         } catch (NoSuchFieldException e) {
@@ -31,7 +31,7 @@ public class AnswerRespTest {
         AnswerResp answerResp = new AnswerResp();
         answerResp.setId(2);
 
-        Field privateField = null;
+        Field privateField;
         try {
             privateField = answerResp.getClass().getDeclaredField("id");
         } catch (NoSuchFieldException e) {
