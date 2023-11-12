@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<quest id="1" name="замок">
+	<question id="1" message="Вы находитесь в старинном замке с двумя дверями.">
+		<answer id="1" stepTo="2" message="Левая дверь"/>
+		<answer id="2" stepTo="17" message="Правая дверь"/>
+	</question>
+	<question id="2" message="Вы вошли в подземелье.">
+		<answer id="1" stepTo="3" message="Идете вглубь подземелья"/>
+		<answer id="2" stepTo="1" message="Возвращаетесь обратно"/>
+	</question>
+	<question id="3" message="В подземелье вы натыкаетесь на распутье.">
+		<answer id="1" stepTo="4" message="Налево"/>
+		<answer id="2" stepTo="5" message="Направо"/>
+	</question>
+	<question id="4" message="Вы находите сундук.">
+		<answer id="1" stepTo="6" message="Открыть сундук"/>
+		<answer id="2" stepTo="7" message="Идти дальше"/>
+	</question>
+	<question id="5" message="Вы встречаете скелета.">  	
+		<answer id="1" stepTo="8" message="Попробуете сразиться с ним"/>
+		<answer id="2" stepTo="9" message="Уйдете"/>
+	</question>
+	<question id="6" message="Вы открываете сундук и находите древний артефакт.">
+		<answer id="1" stepTo="10" message="Взяли его с собой"/>
+		<answer id="2" stepTo="11" message="Оставили"/>
+	</question>
+	<question id="7" message="Вы идете дальше и натыкаетесь на зеркало.">  
+		<answer id="1" stepTo="12" message="Взглянете в него"/>
+		<answer id="2" stepTo="27" message="Пойдете дальше"/>
+	</question>
+	<question id="8" message="Вы сразились со скелетом, но он оказался сильнее. Игра окончена, вы проиграли.">
+		<result>game over</result>
+	</question>
+	<question id="9" message="Вы попытались уйти от скелета, но он вас догнал. Игра окончена, вы проиграли.">
+		<result>game over</result>
+	</question>
+	<question id="10" message="Вы взяли артефакт, но вас атаковало проклятое существо."> 	
+		<answer id="1" stepTo="13" message="Попробуете сразиться"/>
+		<answer id="2" stepTo="14" message="Попытаетесь убежать"/>
+	</question>
+	<question id="11" message="Вы оставили артефакт и продолжаете свой путь."> 
+		<answer id="1" stepTo="27" message="Продолжить"/>
+	</question>
+	<question id="12" message="Вы заглянули в зеркало и увидели свое отражение, которое попыталось вас удушить.">  	
+		<answer id="1" stepTo="15" message="Попробуете устоять"/>
+		<answer id="2" stepTo="16" message="Попытаетесь отойти от зеркала"/>
+	</question>
+	<question id="13" message="Вы сразились с проклятым существом, но оно оказалось сильнее. Игра окончена, вы проиграли."> 
+		<result>game over</result>
+	</question>
+	<question id="14" message="Вы попытались убежать от проклятого существа, но оно вас догнало. Игра окончена, вы проиграли.">
+		<result>game over</result>
+	</question>
+	<question id="15" message="Вы устояли перед зеркалом и оно разбилось, распространяя магическую аурой. Ваше отражение покинуло вас и вы продолжаете свой путь.">
+		<answer id="1" stepTo="27" message="Продолжить"/>
+	</question>
+	<question id="16" message="Вы отошли от зеркала, оставив его за спиной, и идете дальше."> 
+		<answer id="1" stepTo="27" message="Продолжить"/>
+	</question>
+	<question id="17" message="Вы попали в сад.">
+		<answer id="1" stepTo="18" message="Пройдетесь по саду"/>
+		<answer id="2" stepTo="1" message="Вернетесь обратно"/>
+	</question>
+	<question id="18" message="Вы прошлись по саду и наткнулись на дверь внутри замка.">
+		<answer id="1" stepTo="19" message="Попробуете открыть ее"/>
+		<answer id="2" stepTo="17" message="Вернетесь в сад"/>
+	</question>
+	<question id="19" message="Вы открыли дверь и оказались в библиотеке замка.">
+		<answer id="1" stepTo="20" message="Исследуете ее"/>
+		<answer id="2" stepTo="17" message="Вернетесь обратно"/>
+	</question>
+	<question id="20" message="В библиотеке вы нашли книгу со старинными заклинаниями.">
+		<answer id="1" stepTo="26" message="Прочитаете одно из заклинаний"/>
+		<answer id="2" stepTo="27" message="Пойдете дальше"/>
+	</question>
+	<question id="26" message="Вы прочитали заклинание и вызвали духа. Он предложил вам помощь.">	
+		<answer id="1" stepTo="28" message="Примете его предложение"/>
+		<answer id="2" stepTo="29" message="Откажетесь"/>
+	</question>
+	<question id="27" message="Вы пойдете дальше и находите ключ к сокровищнице.">
+		<answer id="1" stepTo="30" message="Продолжить"/>
+	</question>
+	<question id="28" message="Дух помог вам раскрыть местоположение сокровищницы. Вы отправляетесь туда и находите сокровища. Поздравляю, вы завершили квест!">
+		<result>win</result>
+	</question>
+	<question id="29" message="Вы отказались от помощи духа и продолжаете свой путь.">	
+		<answer id="1" stepTo="30" message="Продолжить"/>
+	</question>
+	<question id="30" message="Вы находите сокровищницу, но перед ней стоит дракон.">	
+		<answer id="1" stepTo="31" message="Попробуете уйти"/>
+		<answer id="2" stepTo="32" message="Сразитесь с ним"/>
+	</question>
+	<question id="31" message="Вы попытались уйти, но дракон вас атаковал. Игра окончена, вы проиграли.">
+		<result>game over</result>
+	</question>
+	<question id="32" message="Вы сразились с драконом и одолели его. Поздравляю, вы завершили квест!">
+		<result>win</result>
+	</question>
+</quest>
