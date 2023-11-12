@@ -36,7 +36,7 @@ public class QuestServlet extends HttpServlet {
 
         if (questId != null)
             currentSession.setAttribute("questId",questId);
-        else if (questId == null && sessionQuestId != null) {
+        else if (sessionQuestId != null) {
             questId = sessionQuestId;
         }
 
