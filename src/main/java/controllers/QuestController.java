@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class QuestController {
 
-    private static final Logger log = LoggerFactory.getLogger(InitServlet.class);
+    private static final Logger log = LoggerFactory.getLogger(QuestController.class);
     private Quest quest;
 
     private String questId;

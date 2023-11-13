@@ -33,7 +33,7 @@
         <nav>
             <ul class="nav nav-pills float-right">
                 <li class="nav-item">
-                    <a class="nav-link" href="/main.jsp">Квесты </a>
+                    <a class="nav-link" href="/index.jsp">Квесты </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user.jsp">Профиль</a>

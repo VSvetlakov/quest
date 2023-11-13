@@ -25,25 +25,30 @@ public class InitServlet extends HttpServlet {
         if (username == null){
             getServletContext().getRequestDispatcher("/auth.jsp").forward(req, resp);
         }else {
-            resp.sendRedirect(req.getContextPath() + "/main.jsp");
+            resp.sendRedirect(req.getContextPath() + "/index.jsp");
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-        String user      = req.getParameter("username");
+        String username      = req.getParameter("username");
         String password  = req.getParameter("password");
         String ipAddress = req.getRemoteAddr();
 
-        log.info("Пользователь {} вошел в систему", user);
+        if (username == null || username.isEmpty()) {
+            resp.sendRedirect(req.getContextPath() + "/auth.jsp");
+            return;
+        }
+
+        log.info("Пользователь {} вошел в систему", username);
 
         HttpSession currentSession = req.getSession();
 
-        currentSession.setAttribute("user",user);
+        currentSession.setAttribute("user",username);
         currentSession.setAttribute("winCount",0);
         currentSession.setAttribute("loseCount",0);
 
-        resp.sendRedirect(req.getContextPath() + "/main.jsp");
+        resp.sendRedirect(req.getContextPath() + "/index.jsp");
     }
 }

@@ -78,67 +78,67 @@
 
 <script>
 
-function startQuest(questId){
-    $("#quests").hide();
-    $("#questPage").show();
+    function startQuest(questId){
+        $("#quests").hide();
+        $("#questPage").show();
 
-    $.post("/questService", {questId: questId}, function (data) {
+        $.post("/questService", {questId: questId}, function (data) {
 
-        $("#answers").empty();
+            $("#answers").empty();
 
-        $.each(data, function (key, val) {
+            $.each(data, function (key, val) {
 
-            if (key == "message")
-                $("#question").text(val);
+                if (key == "message")
+                    $("#question").text(val);
 
-            if (key == "answerList") {
+                if (key == "answerList") {
 
-                $.each(val, function (id, answer) {
+                    $.each(val, function (id, answer) {
 
-                    $('#answers').append('<div class="btn-group mr-2" role="group" aria-label="First group">' +
-                        '<a answerId=' + answer.id + ' class="btn btn-lg btn-success" href="#" role="button" onclick="doStep(' + answer.id + ')";>' + answer.message + '</a></div>');
+                        $('#answers').append('<div class="btn-group mr-2" role="group" aria-label="First group">' +
+                            '<a answerId=' + answer.id + ' class="btn btn-lg btn-success" href="#" role="button" onclick="doStep(' + answer.id + ')";>' + answer.message + '</a></div>');
 
-                });
-            }
+                    });
+                }
+            });
         });
-    });
-}
+    }
 
-function doStep(answerId){
+    function doStep(answerId){
 
-    let questId = 1;
+        let questId = 1;
 
-    $.post("/questService", {answerId: answerId}, function (data) {
+        $.post("/questService", {answerId: answerId}, function (data) {
 
-        $("#answers").empty();
+            $("#answers").empty();
 
-        $.each(data, function (key, val) {
+            $.each(data, function (key, val) {
 
-            if (key == "result") {
-                $('#answers').append('<div class="btn-group mr-2" role="group" aria-label="First group">' +
-                    '<a class="btn btn-lg btn-success" href="#" role="button" onclick="restart()";>Играть заново</a></div>');
-            }
-            if (key == "message")
-                $("#question").text(val);
-
-            if (key == "answerList") {
-
-                $.each(val, function (id, answer) {
-
+                if (key == "result") {
                     $('#answers').append('<div class="btn-group mr-2" role="group" aria-label="First group">' +
-                        '<a answerId=' + answer.id + ' class="btn btn-lg btn-success" href="#" role="button" onclick="doStep(' + answer.id + ')";>' + answer.message + '</a></div>');
+                        '<a class="btn btn-lg btn-success" href="#" role="button" onclick="restart()";>Играть заново</a></div>');
+                }
+                if (key == "message")
+                    $("#question").text(val);
 
-                });
-            }
+                if (key == "answerList") {
+
+                    $.each(val, function (id, answer) {
+
+                        $('#answers').append('<div class="btn-group mr-2" role="group" aria-label="First group">' +
+                            '<a answerId=' + answer.id + ' class="btn btn-lg btn-success" href="#" role="button" onclick="doStep(' + answer.id + ')";>' + answer.message + '</a></div>');
+
+                    });
+                }
+            });
         });
-    });
-}
+    }
 
-function restart(){
+    function restart(){
 
-    $("#quests").show();
-    $("#questPage").hide();
-}
+        $("#quests").show();
+        $("#questPage").hide();
+    }
 
 </script>
 </body>
